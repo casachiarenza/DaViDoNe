@@ -20,7 +20,7 @@ HTML = """
             font-size: 2.2vh;
             font-family: 'Open Sans', Arial, sans-serif;
             color: white;
-            background: url('https://i.postimg.cc/m2ZqvpZj/italian-seamless-free-vector-pattern3.png') center center repeat;
+            background: url('https://png.pngtree.com/png-clipart/20220823/ourlarge/pngtree-italian-flag-brush-png-image_6118954.png') center center repeat;
             background-size: cover;
             display: flex;
             align-items: flex-start;
