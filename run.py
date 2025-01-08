@@ -91,7 +91,7 @@ MANIFEST = {
     "types": ["movie", "series", "tv"],
     "name": Name,
     "description": "Addon providing HTTPS Streams for Italian Movies, Series, and Live TV! Note that you need to have Kitsu Addon installed in order to watch Anime",
-    "logo": "https://creazilla-store.fra1.digitaloceanspaces.com/emojis/49647/pizza-emoji-clipart-md.png"
+    "logo": "https://images.emojiterra.com/twitter/v14.0/1024px/1f1ee-1f1f9.png.png"
 }
 
 
