@@ -5,7 +5,7 @@ HTML = """
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Mamma Mia</title>
+    <title>DaViDoNe</title>
     <link rel="icon" href="https://images.emojiterra.com/twitter/v14.0/1024px/1f1ee-1f1f9.png" type="image/x-icon">
     <title>Fast Search Example</title>
     <style>
@@ -67,8 +67,8 @@ HTML = """
         }
         .provider-group {
             display: flex;
-            align-items: center; /* Vertically align items */
-            justify-content: space-between; /* Spread items across the available space */
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 2vh;
             background: rgba(255, 255, 255, 0.1);
             padding: 1.5vh;
@@ -78,20 +78,20 @@ HTML = """
         }
         .provider-group label {
             display: flex;
-            align-items: center; /* Align items within label vertically centered */
+            align-items: center;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            flex-grow: 1; /* Let the label take as much space as possible */
+            flex-grow: 1;
             font-size: 2.2vh;
         }
         .fast-search {
             display: flex;
-            align-items: center; /* Align the Fast Search checkbox vertically centered */
-            margin-left: 10px; /* Space between provider and Fast Search */
+            align-items: center;
+            margin-left: 10px;
         }
         .fast-search input[type="checkbox"] {
-            margin-right: 0.5vh; /* Space between the checkbox and label */
+            margin-right: 0.5vh;
             width: 3vh;
             height: 3vh;
         }
@@ -115,7 +115,7 @@ HTML = """
         }
         .contact a {
             font-size: 1.4vh;
-            font-style: italic;
+            font-style: italic.
         }
         button {
             border: 0;
@@ -139,7 +139,7 @@ HTML = """
             box-shadow: none;
         }
         button:active {
-            box-shadow: 0 0 0 0.5vh white inset;
+            box-shadow: 0 0 0 0.5vh white inset.
         }
         #manifestBox {
             margin-top: 2vh;
@@ -148,28 +148,27 @@ HTML = """
             border-radius: 5px;
             display: none;
             text-align: left;
-            white-space: pre-wrap;
+            white-space: pre-wrap.
         }
         #generateManifestButton {
-            background: #4CAF50;
+            background: #4CAF50.
         }
         #installButton {
-            background: #FF5722;
+            background: #FF5722.
         }
         #installButton a {
             color: white;
-            text-decoration: none;
+            text-decoration: none.
         }
         #additionalText {
             margin-top: 2vh;
             font-size: 1.8vh;
-            text-align: left;
+            text-align: left.
         }
-        /* Responsive adjustments for smaller screens */
         @media (max-width: 600px) {
             .provider-group label {
                 font-size: 2vh;
-                white-space: nowrap;
+                white-space: nowrap.
             }
         }
     </style>
@@ -198,79 +197,9 @@ HTML = """
                 </span>
             </div>
             <div class="provider-group">
-                <label for="lordchannel" class="provider-label">
-                    <input type="checkbox" id="lordchannel"> LordChannel
-                </label>
-            </div>
-            <div class="provider-group">
-                <label for="streamingwatch" class="provider-label">
-                    <input type="checkbox" id="streamingwatch"> StreamingWatch
-                </label>
-            </div>
-            <div class="provider-group">
-                <label for="animeworld" class="provider-label">
-                    <input type="checkbox" id="animeworld"> Animeworld
-                </label>
-            </div>
-            <p>NON compilare i seguenti a meno che tu non habbia un proxy su istanza privata da aggiungere
-            </p>
-            <div class="provider-group">
-                <label for="guardaserie" class="provider-label">
-                    <input type="checkbox" id="guardaserie"> Guardaserie
-                </label>
-            </div>
-            <div class="provider-group">
-                <label for="guardahd" class="provider-label">
-                    <input type="checkbox" id="guardahd"> GuardaHD
-                </label>
-            </div>
-            <div class="provider-group">
-                <label for="tantifilm" class="provider-label">
-                    <input type="checkbox" id="tantifilm"> Tantifilm
-                </label>
-                <span class="fast-search">
-                    <label for="fast_search_tf">
-                        <input type="checkbox" id="fast_search_tf"> Fast Search
-                    </label>
-                </span>
-             </div>
-          <div>
-            <p>Per selezionare i seguenti provider devi avere Mediaflow-proxy e le relative credenziali... Altrimenti puoi lasciare tutto vuoto oppure selezionare solo LiveTV
-            </p>
-            </div>
-            <div class="provider-group">
-                <label for="filmpertutti" class="provider-label">
-                    <input type="checkbox" id="filmpertutti"> 
-                    Filmpertutti
-                </label>
-            </div>
-          
-            <div class="provider-group">
-                <label for="cb01" class="provider-label">
-                    <input type="checkbox" id="cb01"> CB01
-                </label>
-            </div>
-             <div class="provider-group">
-                <label for="ddlstream" class="provider-label">
-                    <input type="checkbox" id="ddlstream"> DDLStream Italy
-                </label>
-            </div>
-            <div class="provider-group">
                 <label for="livetv" class="provider-label">
                     <input type="checkbox" id="livetv"> LiveTV
                 </label>
-            </div>
-            <div class="provider-group">
-                <label for="mediaflowproxy" class="provider-label">
-                    <input type="checkbox" id="mediaflowproxy"> MediaFlow Proxy
-                </label>
-                <button type="button" id="mediaFlowProxyButton">Insert Proxy Info</button>
-            </div>
-            <div id="mediaFlowProxyInputContainer" style="display: none;">
-                <input type="text" id="mediaFlowProxyInput" placeholder="Proxy URL">
-            </div>
-            <div id="mediaFlowProxyPasswordContainer" style="display: none;">
-                <input type="password" id="mediaFlowProxyPassword" placeholder="Insert Password">
             </div>
         </form>
         <button id="generateManifestButton">Generate Manifest</button>
@@ -278,49 +207,19 @@ HTML = """
         <button id="installButton">Install in Stremio</button>
     </div>
     <script>
-        // Toggle visibility of proxy input fields
-    document.getElementById('mediaFlowProxyButton').addEventListener('click', function() {
-        const inputContainer = document.getElementById('mediaFlowProxyInputContainer');
-        const passwordInputContainer = document.getElementById('mediaFlowProxyPasswordContainer');
-        inputContainer.style.display = inputContainer.style.display === 'none' ? 'block' : 'none';
-        passwordInputContainer.style.display = passwordInputContainer.style.display === 'none' ? 'block' : 'none';
-    });
-
     // Function to generate the manifest URL
     function generateManifest() {
         let manifest = "|";
         const providers = {
             "streamingcommunity": "SC",
             "fast_search_sc": "SC_FS",
-            "lordchannel": "LC",
-            "streamingwatch": "SW",
-            "tantifilm": "TF",
-            "fast_search_tf": "TF_FS",
-            "filmpertutti": "FT",
-            "animeworld": "AW",
-            "livetv": "LIVETV",
-            "cb01": "CB",
-            "ddlstream": "DDL",
-            "guardaserie": "GS",
-            "guardahd": "GHD",
-            "mediaflowproxy": "MFP"
+            "livetv": "LIVETV"
         };
 
         // Loop through providers and add selected ones to the manifest
         for (const id in providers) {
             if (document.getElementById(id).checked) {
-                if (id === "mediaflowproxy") {
-                    // Add proxy details if MFP is selected
-                    const proxyUrl = document.getElementById("mediaFlowProxyInput").value.trim();
-                    const proxyPassword = document.getElementById("mediaFlowProxyPassword").value.trim();
-                    if (proxyUrl && proxyPassword) {
-                        manifest += `MFP[${proxyUrl},${proxyPassword}]|`;
-                    } else {
-                        manifest += providers[id] + "|"; // Fallback to just "MFP" if no details provided
-                    }
-                } else {
-                    manifest += providers[id] + "|";
-                }
+                manifest += providers[id] + "|";
             }
         }
 
