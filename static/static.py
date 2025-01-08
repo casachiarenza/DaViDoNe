@@ -177,9 +177,9 @@ HTML = """
 <body>
     <div id="addon">
         <div class="logo">
-            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/49647/pizza-emoji-clipart-md.png" alt="Logo">
+            <img src="https://images.emojiterra.com/twitter/v14.0/1024px/1f1ee-1f1f9.png" alt="Logo">
         </div>
-        <h1 class="name">Mamma Mia</h1>
+        <h1 class="name">DaViDoNe</h1>
         <h2 class="version">v1.5.0</h2>
         <div id="additionalText">
             <h2>This addon provides Movie, Series, Anime, and Live TV HTTPS Streams.<br> https://github.com/UrloMythus/MammaMia/</h2>
