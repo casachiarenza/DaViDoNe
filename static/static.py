@@ -6,7 +6,7 @@ HTML = """
 <head>
     <meta charset="utf-8">
     <title>Mamma Mia</title>
-    <link rel="icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/49647/pizza-emoji-clipart-md.png" type="image/x-icon">
+    <link rel="icon" href="https://images.emojiterra.com/twitter/v14.0/1024px/1f1ee-1f1f9.png" type="image/x-icon">
     <title>Fast Search Example</title>
     <style>
         * {
