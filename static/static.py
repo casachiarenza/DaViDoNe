@@ -182,9 +182,9 @@ HTML = """
         <h1 class="name">DaViDoNe</h1>
         <h2 class="version">v1.5.0</h2>
         <div id="additionalText">
-            <h2>This addon provides Movie, Series, Anime, and Live TV HTTPS Streams.<br> https://github.com/UrloMythus/MammaMia/</h2>
+            <h2>Addon di TEST realizzato da Davidone replicando il mitico MammaMia</h2>
         </div>
-        <p class="description">Configure your providers: Note that if you enable Fast Search results will be less accurate but faster</p>
+        <p class="description">Scegli i providers. Fast search velocizza ma otterrai risultati meno accurati</p>
         <h3 class="gives">Select Providers:</h3>
         <form class="pure-form" id="provider-form">
             <div class="provider-group">
@@ -212,7 +212,7 @@ HTML = """
                     <input type="checkbox" id="animeworld"> Animeworld
                 </label>
             </div>
-            <p>To use the following provider you need to have a local instance/ set the proxy enviroment variable... Leave it as it is if you do not know what this is about
+            <p>NON compilare i seguenti a meno che tu non habbia un proxy su istanza privata da aggiungere
             </p>
             <div class="provider-group">
                 <label for="guardaserie" class="provider-label">
@@ -235,7 +235,7 @@ HTML = """
                 </span>
              </div>
           <div>
-            <p>To use the following providers you need to use a local instance or else you need to set up Mediaflow-proxy... Search it on GitHub
+            <p>Per selezionare i seguenti provider devi avere Mediaflow-proxy e le relative credenziali... Altrimenti puoi lasciare tutto vuoto oppure selezionare solo LiveTV
             </p>
             </div>
             <div class="provider-group">
