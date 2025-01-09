@@ -73,7 +73,7 @@ MANIFEST = {
         {
             "type": "tv",
             "id": "tv_channels",
-            "name": "MammaMia",
+            "name": "DaViDoNe",
             "behaviorHints": {
                 "configurable": True,
                 "configurationRequired": True
