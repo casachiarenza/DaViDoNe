@@ -68,12 +68,12 @@ app.add_middleware(SlowAPIMiddleware)
 User_Agent= "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 OPR/111.0.0.0"
 MANIFEST = {
     "id": "org.stremio.mammamia",
-    "version": "1.5.0",
+    "version": "0.0.1",
     "catalogs": [
         {
             "type": "tv",
             "id": "tv_channels",
-            "name": "MammaMia",
+            "name": "DaViDoNe",
             "behaviorHints": {
                 "configurable": True,
                 "configurationRequired": True
