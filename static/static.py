@@ -74,7 +74,12 @@ HTML = """
         }
         .contact a {
             font-size: 1.4vh;
-            font-style: italic.
+            font-style: italic;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         button {
             border: 0;
@@ -92,13 +97,13 @@ HTML = """
             transition: box-shadow 0.1s ease-in-out;
             width: 80%;
             max-width: 35vh;
-            margin: 1vh auto.
+            margin: 1vh auto;
         }
         button:hover {
-            box-shadow: none.
+            box-shadow: none;
         }
         button:active {
-            box-shadow: 0 0 0 0.5vh white inset.
+            box-shadow: 0 0 0 0.5vh white inset;
         }
         #manifestBox {
             margin-top: 2vh;
@@ -107,7 +112,7 @@ HTML = """
             border-radius: 5px;
             display: none;
             text-align: left;
-            white-space: pre-wrap.
+            white-space: pre-wrap;
         }
         #generateManifestButton {
             background: #4CAF50;
@@ -118,7 +123,7 @@ HTML = """
         }
         #installButton a {
             color: white;
-            text-decoration: none.
+            text-decoration: none;
         }
         #additionalText {
             margin-top: 2vh;
@@ -128,7 +133,7 @@ HTML = """
         @media (max-width: 600px) {
             .provider-group label {
                 font-size: 2vh;
-                white-space: nowrap.
+                white-space: nowrap;
             }
         }
     </style>
@@ -139,16 +144,18 @@ HTML = """
             <img src="https://images.emojiterra.com/twitter/v14.0/1024px/1f1ee-1f1f9.png" alt="Logo">
         </div>
         <h1 class="name">DaViDoNe</h1>
-        <h2 class="version">v1.5.0</h2>
+        <h2 class="version">Versione Beta 0.0.1</h2>
         <div id="additionalText">
-            <h2>Addon di TEST realizzato da Davidone Minimal</h2>
+            <h2>Minimal con 2 soli tasti</h2>
         </div>
-        <p class="description">Scegli se generare un manifesto.json oppure se installare</p>
+        <p class="description">Già preconfigurato con MediaFlow Proxy e LiveTV</p>
         <form class="pure-form" id="provider-form">
         </form>
-        <button id="generateManifestButton">Visualizza manifesto json</button>
-        <div id="manifestBox"></div>
-        <button id="installButton">Installa su Stremio</button>
+        <div class="button-container">
+            <button id="generateManifestButton">Visualizza manifesto json</button>
+            <div id="manifestBox"></div>
+            <button id="installButton">Installa su Stremio</button>
+        </div>
     </div>
     <script>
     // Function to generate the manifest URL
@@ -170,7 +177,7 @@ HTML = """
         for (const id in providers) {
             if (id === "mediaflowproxy") {
                 // Add proxy details
-                const proxyUrl = "https://mediaflow-proxy-ve0f.onrender.com";
+                const proxyUrl = "https://tipotoko-spacemfpx.hf.space";
                 const proxyPassword = "Password";
                 manifest += `MFP[${proxyUrl},${proxyPassword}]|`;
             } else {
