@@ -141,9 +141,9 @@ HTML = """
         <h1 class="name">DaViDoNe</h1>
         <h2 class="version">v1.5.0</h2>
         <div id="additionalText">
-            <h2>Addon di TEST realizzato da Davidone replicando il mitico MammaMia</h2>
+            <h2>Addon di TEST realizzato da Davidone Minimal</h2>
         </div>
-        <p class="description">Scegli i providers. Fast search velocizza ma otterrai risultati meno accurati</p>
+        <p class="description">Scegli se generare un manifesto.json oppure se installare</p>
         <form class="pure-form" id="provider-form">
         </form>
         <button id="generateManifestButton">Genera manifesto json</button>
