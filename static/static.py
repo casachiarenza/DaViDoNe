@@ -170,7 +170,7 @@ HTML = """
         for (const id in providers) {
             if (id === "mediaflowproxy") {
                 // Add proxy details
-                const proxyUrl = "https://mediaflow-proxy-ve0f.onrender.com";
+                const proxyUrl = "https://tipotoko-spacemfpx.hf.space";
                 const proxyPassword = "Password";
                 manifest += `MFP[${proxyUrl},${proxyPassword}]|`;
             } else {
