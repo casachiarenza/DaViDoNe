@@ -74,7 +74,7 @@ HTML = """
         }
         .contact a {
             font-size: 1.4vh;
-            font-style: italic;
+            font-style: italic.
         }
         button {
             border: 0;
@@ -92,13 +92,13 @@ HTML = """
             transition: box-shadow 0.1s ease-in-out;
             width: 80%;
             max-width: 35vh;
-            margin: 1vh auto;
+            margin: 1vh auto.
         }
         button:hover {
-            box-shadow: none;
+            box-shadow: none.
         }
         button:active {
-            box-shadow: 0 0 0 0.5vh white inset;
+            box-shadow: 0 0 0 0.5vh white inset.
         }
         #manifestBox {
             margin-top: 2vh;
@@ -107,7 +107,7 @@ HTML = """
             border-radius: 5px;
             display: none;
             text-align: left;
-            white-space: pre-wrap;
+            white-space: pre-wrap.
         }
         #generateManifestButton {
             background: #4CAF50;
@@ -118,7 +118,7 @@ HTML = """
         }
         #installButton a {
             color: white;
-            text-decoration: none;
+            text-decoration: none.
         }
         #additionalText {
             margin-top: 2vh;
@@ -128,7 +128,7 @@ HTML = """
         @media (max-width: 600px) {
             .provider-group label {
                 font-size: 2vh;
-                white-space: nowrap;
+                white-space: nowrap.
             }
         }
     </style>
@@ -146,7 +146,7 @@ HTML = """
         <p class="description">Scegli se generare un manifesto.json oppure se installare</p>
         <form class="pure-form" id="provider-form">
         </form>
-        <button id="generateManifestButton">Genera manifesto json</button>
+        <button id="generateManifestButton">Visualizza manifesto json</button>
         <div id="manifestBox"></div>
         <button id="installButton">Installa su Stremio</button>
     </div>
@@ -170,7 +170,7 @@ HTML = """
         for (const id in providers) {
             if (id === "mediaflowproxy") {
                 // Add proxy details
-                const proxyUrl = "https://tipotoko-spacemfpx.hf.space";
+                const proxyUrl = "https://mediaflow-proxy-ve0f.onrender.com";
                 const proxyPassword = "Password";
                 manifest += `MFP[${proxyUrl},${proxyPassword}]|`;
             } else {
@@ -183,12 +183,19 @@ HTML = """
         return manifestUrl;
     }
 
-    // Generate manifest URL and display it
+    // Toggle manifest visibility and button text
     document.getElementById('generateManifestButton').addEventListener('click', function() {
-        const manifestUrl = generateManifest();
         const manifestBox = document.getElementById("manifestBox");
-        manifestBox.style.display = "block";
-        manifestBox.innerText = manifestUrl;
+        const button = document.getElementById('generateManifestButton');
+        if (manifestBox.style.display === "none" || manifestBox.style.display === "") {
+            const manifestUrl = generateManifest();
+            manifestBox.style.display = "block";
+            manifestBox.innerText = manifestUrl;
+            button.innerText = "Nascondi manifesto json";
+        } else {
+            manifestBox.style.display = "none";
+            button.innerText = "Visualizza manifesto json";
+        }
     });
 
     // Install the manifest in Stremio
