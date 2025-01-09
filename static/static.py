@@ -65,53 +65,12 @@ HTML = """
             font-size: 2.2vh;
             margin-bottom: 10px;
         }
-        .provider-group {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 2vh;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5vh;
-            border-radius: 5px;
-            overflow: hidden;
-            width: 100%;
-        }
-        .provider-group label {
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            flex-grow: 1;
-            font-size: 2.2vh;
-        }
-        .fast-search {
-            display: flex;
-            align-items: center;
-            margin-left: 10px;
-        }
-        .fast-search input[type="checkbox"] {
-            margin-right: 0.5vh;
-            width: 3vh;
-            height: 3vh;
-        }
-        .provider-group input[type="checkbox"] {
-            margin-right: 1.5vh;
-            width: 4vh;
-            height: 4vh;
-        }
-        .parent-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
         .contact {
             position: absolute;
             left: 0;
             bottom: 4vh;
             width: 100%;
-            text-align: center;
+            text-align: center.
         }
         .contact a {
             font-size: 1.4vh;
@@ -133,10 +92,10 @@ HTML = """
             transition: box-shadow 0.1s ease-in-out;
             width: 80%;
             max-width: 35vh;
-            margin: 1vh auto;
+            margin: 1vh auto.
         }
         button:hover {
-            box-shadow: none;
+            box-shadow: none.
         }
         button:active {
             box-shadow: 0 0 0 0.5vh white inset.
@@ -181,30 +140,15 @@ HTML = """
         <h1 class="name">DaViDoNe</h1>
         <h2 class="version">v1.5.0</h2>
         <div id="additionalText">
-            <h2>Addon di TEST realizzato da Davidone replicando il mitico MammaMia</h2>
+            <h2>Addon di TEST DaViDoNe Minimal</h2>
         </div>
-        <p class="description">Scegli i providers. Fast search velocizza ma otterrai risultati meno accurati</p>
+        <p class="description">scegliere se generare un manifest.json oppure se installare</p>
         <h3 class="gives">Select Providers:</h3>
         <form class="pure-form" id="provider-form">
-            <div class="provider-group">
-                <label for="streamingcommunity" class="provider-label">
-                    <input type="checkbox" id="streamingcommunity"> StreamingCommunity
-                </label>
-                <span class="fast-search">
-                    <label for="fast_search_sc">
-                        <input type="checkbox" id="fast_search_sc"> Fast Search
-                    </label>
-                </span>
-            </div>
-            <div class="provider-group">
-                <label for="livetv" class="provider-label">
-                    <input type="checkbox" id="livetv"> LiveTV
-                </label>
-            </div>
         </form>
-        <button id="generateManifestButton">Generate Manifest</button>
+        <button id="generateManifestButton">Genera manifesto json</button>
         <div id="manifestBox"></div>
-        <button id="installButton">Install in Stremio</button>
+        <button id="installButton">Installa su Stremio</button>
     </div>
     <script>
     // Function to generate the manifest URL
@@ -212,15 +156,14 @@ HTML = """
         let manifest = "|";
         const providers = {
             "streamingcommunity": "SC",
-            "fast_search_sc": "SC_FS",
-            "livetv": "LIVETV"
+            "lordchannel": "LC",
+            "streamingwatch": "SW",
+            "animeworld": "AW"
         };
 
-        // Loop through providers and add selected ones to the manifest
+        // Add selected providers to the manifest
         for (const id in providers) {
-            if (document.getElementById(id).checked) {
-                manifest += providers[id] + "|";
-            }
+            manifest += providers[id] + "|";
         }
 
         const instanceUrl = "{instance_url}"; // Replace with your instance URL
