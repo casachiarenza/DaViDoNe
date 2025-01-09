@@ -68,12 +68,12 @@ app.add_middleware(SlowAPIMiddleware)
 User_Agent= "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 OPR/111.0.0.0"
 MANIFEST = {
     "id": "org.stremio.mammamia",
-    "version": "1.5.0",
+    "version": "0.0.1",
     "catalogs": [
         {
             "type": "tv",
             "id": "tv_channels",
-            "name": "MammaMia",
+            "name": "DaViDoNe",
             "behaviorHints": {
                 "configurable": True,
                 "configurationRequired": True
@@ -90,7 +90,7 @@ MANIFEST = {
     "resources": ["stream", "catalog", "meta"],
     "types": ["movie", "series", "tv"],
     "name": Name,
-    "description": "Addon providing HTTPS Streams for Italian Movies, Series, and Live TV! Note that you need to have Kitsu Addon installed in order to watch Anime",
+    "description": "Addon di Davidone con Film, SerieTV, Anime e LiveTV, rigorosamente in Italiano",
     "logo": "https://images.emojiterra.com/twitter/v14.0/1024px/1f1ee-1f1f9.png"
 }
 
