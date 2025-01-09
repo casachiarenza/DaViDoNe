@@ -123,7 +123,7 @@ HTML = """
         #additionalText {
             margin-top: 2vh;
             font-size: 1.8vh;
-            text-align: left;
+            text-align: center; /* Center align the text */
         }
         @media (max-width: 600px) {
             .provider-group label {
