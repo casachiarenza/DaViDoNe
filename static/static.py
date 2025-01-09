@@ -70,11 +70,11 @@ HTML = """
             left: 0;
             bottom: 4vh;
             width: 100%;
-            text-align: center.
+            text-align: center;
         }
         .contact a {
             font-size: 1.4vh;
-            font-style: italic.
+            font-style: italic;
         }
         button {
             border: 0;
@@ -92,13 +92,13 @@ HTML = """
             transition: box-shadow 0.1s ease-in-out;
             width: 80%;
             max-width: 35vh;
-            margin: 1vh auto.
+            margin: 1vh auto;
         }
         button:hover {
-            box-shadow: none.
+            box-shadow: none;
         }
         button:active {
-            box-shadow: 0 0 0 0.5vh white inset.
+            box-shadow: 0 0 0 0.5vh white inset;
         }
         #manifestBox {
             margin-top: 2vh;
@@ -107,27 +107,28 @@ HTML = """
             border-radius: 5px;
             display: none;
             text-align: left;
-            white-space: pre-wrap.
+            white-space: pre-wrap;
         }
         #generateManifestButton {
-            background: #4CAF50.
+            background: #4CAF50;
+            margin-bottom: 1vh; /* Add space between buttons */
         }
         #installButton {
-            background: #FF5722.
+            background: #FF5722;
         }
         #installButton a {
             color: white;
-            text-decoration: none.
+            text-decoration: none;
         }
         #additionalText {
             margin-top: 2vh;
             font-size: 1.8vh;
-            text-align: left.
+            text-align: left;
         }
         @media (max-width: 600px) {
             .provider-group label {
                 font-size: 2vh;
-                white-space: nowrap.
+                white-space: nowrap;
             }
         }
     </style>
@@ -140,10 +141,9 @@ HTML = """
         <h1 class="name">DaViDoNe</h1>
         <h2 class="version">v1.5.0</h2>
         <div id="additionalText">
-            <h2>Addon di TEST DaViDoNe Minimal</h2>
+            <h2>Addon di TEST realizzato da Davidone replicando il mitico MammaMia</h2>
         </div>
-        <p class="description">scegliere se generare un manifest.json oppure se installare</p>
-        <h3 class="gives">Select Providers:</h3>
+        <p class="description">Scegli i providers. Fast search velocizza ma otterrai risultati meno accurati</p>
         <form class="pure-form" id="provider-form">
         </form>
         <button id="generateManifestButton">Genera manifesto json</button>
