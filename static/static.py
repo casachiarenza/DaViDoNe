@@ -5,7 +5,7 @@ HTML = """
 <html>
 <head>
     <meta charset="utf-8">
-    <title>DaViDoNe</title>
+    <title>MatriMia</title>
     <link rel="icon" href="https://images.emojiterra.com/twitter/v14.0/1024px/1f1ee-1f1f9.png" type="image/x-icon">
     <title>Fast Search Example</title>
     <style>
@@ -143,10 +143,10 @@ HTML = """
         <div class="logo">
             <img src="https://images.emojiterra.com/twitter/v14.0/1024px/1f1ee-1f1f9.png" alt="Logo">
         </div>
-        <h1 class="name">DaViDoNe</h1>
+        <h1 class="name">MatriMia</h1>
         <h2 class="version">Versione Beta 0.0.1</h2>
         <div id="additionalText">
-            <h2>Minimal con 2 soli tasti</h2>
+            <h2>un rispettoso tributo al mitico UrloMythus/MammaMia</h2>
         </div>
         <p class="description">Già preconfigurato con MediaFlow Proxy e LiveTV</p>
         <form class="pure-form" id="provider-form">
