@@ -6,7 +6,7 @@ import re
 import json
 SW_DOMAIN = config.SW_DOMAIN
 async def wponce_get(client):
-    response = await client.get(f"https://www.streamingwatch.{SW_DOMAIN}/contatto/")
+    response = await client.get(f"{SW_DOMAIN}/contatto/")
     pattern = r'"admin_ajax_nonce":"(\w+)"'
     matches = re.findall(pattern, response.text)
     wponce = matches[1]
@@ -15,15 +15,15 @@ async def wponce_get(client):
 async def search(showname,season,episode,date,ismovie,client):
     if ismovie == 1:
         wponce = await wponce_get(client)
-        query = f'https://www.streamingwatch.{SW_DOMAIN}/wp-admin/admin-ajax.php'
+        query = f'{SW_DOMAIN}/wp-admin/admin-ajax.php'
         headers = {
-            'authority': f'www.streamingwatch.{SW_DOMAIN}',
+            'authority': f'{SW_DOMAIN}',
             'accept': '*/*',
             'accept-language': 'it-IT,it;q=0.9,en-US;q=0.8,en;q=0.7',
             'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
             # 'cookie': 'wordpress_test_cookie=WP%20Cookie%20check',
-            'origin': f'https://www.streamingwatch.{SW_DOMAIN}',
-            'referer': f'https://www.streamingwatch.{SW_DOMAIN}',
+            'origin': f'{SW_DOMAIN}',
+            'referer': f'{SW_DOMAIN}/',
             'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Android"',
@@ -50,7 +50,7 @@ async def search(showname,season,episode,date,ismovie,client):
             if date == page_date:
                 href = temp_href['href']
                 href = soup.find('a')['href']
-                response = await client.get(href, allow_redirects=True, impersonate = "chrome120")
+                response = await client.get(href, allow_redirects=True, impersonate = "chrome124")
                 soup = BeautifulSoup(response.text,'lxml',parse_only=SoupStrainer('iframe'))
                 iframe = soup.find('iframe')
                 hdplayer = iframe.get('data-lazy-src')
@@ -58,22 +58,23 @@ async def search(showname,season,episode,date,ismovie,client):
                 return hdplayer
     elif ismovie == 0:
         #Some series have the name in english so we first search with the categories option and then we use the obtained ID to get all the episodes
-        id_response = await client.get(f'https://streamingwatch.{SW_DOMAIN}/wp-json/wp/v2/categories?search={showname}&_fields=id', allow_redirects=True, impersonate = "chrome120")
+        id_response = await client.get(f'{SW_DOMAIN}/wp-json/wp/v2/categories?search={showname}&_fields=id', allow_redirects=True, impersonate = "chrome120")
         data = json.loads(id_response.text)
         category_id = data[0]['id']
-        query = f'https://streamingwatch.{SW_DOMAIN}/wp-json/wp/v2/posts?categories={category_id}&per_page=100'
+        query = f'{SW_DOMAIN}/wp-json/wp/v2/posts?categories={category_id}&per_page=100'
         response = await client.get(query, allow_redirects=True, impersonate = "chrome120")
         data_json = response.text
         data = json.loads(data_json)
         for entry in data:
-            if f"stagione-{season}-episodio-{episode}" in entry["slug"] and f"stagione-{season}-episodio-{episode}0" not in entry["slug"]:
-                content = entry["content"]["rendered"]
+            if f"stagione-{season}-episodio-{episode}" in entry["slug"] or f"stagione-{season}-episode-{episode}" in entry["slug"]:
+                if f"stagione-{season}-episodio-{episode}0" not in entry["slug"]:
+                    content = entry["content"]["rendered"]
                 #"content":{
 #    "rendered":"<p><!--baslik:PRO--><iframe loading=\"lazy\" src=\"https:\/\/hdplayer.gives\/embed\/YErLVq64uNTZRNz\" frameborder=\"0\" width=\"700\" height=\"400\" allowfullscreen><\/iframe><\/p>\n","protected":false}
-                start = content.find('src="') + len('src="') #start of url
-                end = content.find('"', start) #end of url
-                hdplayer = content[start:end]
-                return hdplayer
+                    start = content.find('src="') + len('src="') #start of url
+                    end = content.find('"', start) #end of url
+                    hdplayer = content[start:end]
+                    return hdplayer
 async def hls_url(hdplayer,client):
     response = await client.get(hdplayer, allow_redirects=True, impersonate = "chrome120")
     match = re.search(r'sources:\s*\[\s*\{\s*file\s*:\s*"([^"]*)"', response.text)
@@ -117,7 +118,7 @@ async def test_animeworld():
     from curl_cffi.requests import AsyncSession
     async with AsyncSession() as client:
         # Replace with actual id, for example 'anime_id:episode' format
-        test_id = "tt1431045"  # This is an example ID format
+        test_id = "tt1190634:4:8"  # This is an example ID format
         results = await streamingwatch(test_id, client)
 
 if __name__ == "__main__":

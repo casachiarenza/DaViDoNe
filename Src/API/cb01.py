@@ -35,8 +35,7 @@ if CB_PROXY == "1":
             "http": proxy,
             "https": proxy
         }   
-    if MX_PROXY == "1":
-        proxies2 = proxy
+        proxies2 = proxies
  
 CB_ForwardProxy = config.CB_ForwardProxy
 MX_ForwardProxy = config.MX_ForwardProxy
@@ -61,14 +60,14 @@ async def get_stayonline(link,client):
                     'x-requested-with': 'XMLHttpRequest',
                 }
     data = {'id': link.split("/")[-2], 'ref': ''}
-    response = await client.post(ForwardProxy2 + 'https://stayonline.pro/ajax/linkEmbedView.php', headers=headers, data=data, proxies2 = proxies2)
+    response = await client.post('https://stayonline.pro/ajax/linkEmbedView.php', headers=headers, data=data, proxies = proxies2)
     real_url = response.json()['data']['value']
     return real_url
 
 
 async def get_uprot(link,client):
         if "msf" in link:
-             link = link.replace("msf","mse")
+             link = link.replace("msf","mse")    
         headers = fake_headers.generate()
         response = await client.get(ForwardProxy2 + link, headers=headers, allow_redirects=True, timeout=10, proxies=proxies2, impersonate = "chrome124")
         soup = BeautifulSoup(response.text, "lxml")
@@ -103,7 +102,7 @@ async def get_true_link_mixdrop(real_link,client,MFP):
         return None
 async def get_true_link_maxstream(maxstream_url,client):
         headers = fake_headers.generate()    
-        # Send a GET request to the Maxstream URL
+        # Send a GET request to the Maxstream URL)
         response = await client.get(ForwardProxy2 + maxstream_url, headers=headers, allow_redirects=True, timeout=10,proxies = proxies2, impersonate = "chrome124")
         [s1, s2] = re.search(r"\}\('(.+)',.+,'(.+)'\.split", response.text).group(1, 2)
         terms = s2.split("|")
@@ -141,8 +140,8 @@ async def search_movie(showname,date,client):
     try:
         showname = showname.replace(" ","+").replace("ò","o").replace("è","e").replace("à","a").replace("ù","u").replace("ì","i")  
         headers = fake_headers.generate()
-        headers['Referer'] = f'https://cb01new.{CB_DOMAIN}/'
-        query = f'https://cb01new.{CB_DOMAIN}/?s={showname}'
+        headers['Referer'] = f'{CB_DOMAIN}/'
+        query = f'{CB_DOMAIN}/?s={showname}'
         response = await client.get(ForwardProxy + query,headers=headers, impersonate = "chrome124", proxies = proxies)
         if response.status_code != 200:
             print(f"CB01 Failed to fetch search results: {response.status_code}")
@@ -170,8 +169,8 @@ async def search_series(showname,date,client):
     try:
         showname = showname.replace(" ","+")
         headers = fake_headers.generate()
-        headers['Referer'] = f'https://cb01new.{CB_DOMAIN}/serietv/'
-        query = f'https://cb01new.{CB_DOMAIN}/serietv/?s={showname}'
+        headers['Referer'] = f'{CB_DOMAIN}/serietv/'
+        query = f'{CB_DOMAIN}/serietv/?s={showname}'
         response = await client.get(ForwardProxy + query,headers=headers,impersonate = "chrome124", proxies = proxies)
         if response.status_code != 200:
             print(f"CB01 Failed to fetch search results: {response.status_code}")
@@ -202,15 +201,24 @@ async def movie_redirect_url(link,client,MFP):
         # Extract the redirect URL from the HTML
         soup = BeautifulSoup(response.text, "lxml",parse_only=SoupStrainer('div'))
         redirect_url = soup.find("div", id="iframen2").get("data-src")
-        try:
-            if "stayonline" in redirect_url:
-                mixdrop_real_link = await get_stayonline(redirect_url,client)
-                final_url = await get_true_link_mixdrop(mixdrop_real_link,client,MFP)
+        print(redirect_url)
+        if "stayonline" in redirect_url:
+            mixdrop_real_link = await get_stayonline(redirect_url,client)
+            final_url = await get_true_link_mixdrop(mixdrop_real_link,client,MFP)
+            if final_url != None:
                 return final_url
-        except Exception as e:  
+            else:
+                redirect_url = soup.find("div", id="iframen1").get("data-src")
+                if "stayonline" in redirect_url:
+                    redirect_url =await get_stayonline(redirect_url,client)
+                maxstream_real_link = await get_uprot(redirect_url,client)
+                final_url = await get_true_link_maxstream(maxstream_real_link,client) 
+                return(final_url)
+
+        else:
             redirect_url = soup.find("div", id="iframen1").get("data-src")
             if "stayonline" in redirect_url:
-                    redirect_url =await get_stayonline(redirect_url,client)
+                redirect_url =await get_stayonline(redirect_url,client)
             maxstream_real_link = await get_uprot(redirect_url,client)
             final_url = await get_true_link_maxstream(maxstream_real_link,client) 
             return(final_url)

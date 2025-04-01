@@ -1,15 +1,15 @@
 import Src.Utilities.config as config
 SKY_DOMAIN = config.SKY_DOMAIN
 okru = {
-    "rai-1": "https://ok.ru/videoembed/7868570672752?nochat=1", 
-    "rai-2": "https://ok.ru/videoembed/7805618364016?nochat=1",
+    "rai-1": "https://ok.ru/videoembed/9340203179632?nochat=1", 
+    "rai-2": "https://ok.ru/videoembed/9267281010288?nochat=1",
     "canale-5": "https://ok.ru/videoembed/7871149252208?nochat=1",
     "italia-1": "https://ok.ru/videoembed/7393558339184?nochat=1",
     "rai-premium": "https://ok.ru/videoembed/7363152715376?nochat=1",
     "rai-movie": "https://ok.ru/videoembed/7384012693104?nochat=1",
-    "tv8": "https://ok.ru/videoembed/7681651777136?nochat=1",
+    "tv8": "https://ok.ru/videoembed/8077072998000?nochat=1",
     "rsi-la-2": "https://ok.ru/videoembed/7681648107120?nochat=1",
-    "mediaset-extra": "https://ok.ru/videoembed/7363152715376?nochat=1",
+    "mediaset-extra": "https://ok.ru/videoembed/7363151601264?nochat=1",
     "mediaset-infinity": "https://ok.ru/videoembed/6323249159792%3Fnochat=1"
 }
 
@@ -791,6 +791,7 @@ webru_vary = {
     "sky-sport-arena": "calcioXskysportarena",
     "sky-sport-tennis": "calcioXskysporttennis",
     "sky-sport-nba": "calcioXskysportnba", 
+    "dazn-1": "Xserie"
 }
 #"dazn-zona-a": "https://webuit.mizhls.ru/lb/calcioXzona/index.m3u8"
 webru_dlhd = {
@@ -822,7 +823,19 @@ webru_dlhd = {
     "sky-cinema-suspence": "premium868",
     "sky-sport-253": "premium873",
     "sky-serie": "premium880",
-    "dazn-1": "premium877"
+    "dazn-1": "premium877",
+    "rai-1": "premium850",
+    "rai-2": "premium851",
+    "rai-3": "premium852",
+    "canale-5": "premium853",
+    "rai-sport": "premium882",
+    "rai-premium": "premium858",
+    "italia-1" : "premium854",
+    "la7": "premium855",
+    "la7d": "premium856",
+    "mediaset-20": "premium857",
+    "la5": "premium856",
+
 }
 extra_sources = {
     "rai-1": ["https://m3u.iranvids.com/rai01/output.m3u8"],
@@ -843,34 +856,35 @@ extra_sources = {
     "dmax": ["https://tvit.leicaflorianrobert.dev/discovery/dmax/stream.m3u8"],
     "nove": ["https://tvit.leicaflorianrobert.dev/discovery/nove/stream.m3u8"],
     "euronews": ["https://amg00882-amg00882c4-wedotv-eu-4536.playouts.now.amagi.tv/playlist/amg00882-euronewsfast-euronewsita-wedotveu/playlist.m3u8?app_bundle=&app_name=wedotv&app_store_url=https://wedotv.com&url=https://wedotv.com&gdpr=1&channel_name=Euronews - Italiano&content_custom_1_param=Euronews - Italiano"],
-    "doctor-who": ["https://amg00793-amg00793c17-samsung-it-4577.playouts.now.amagi.tv/playlist/amg00793-bbcstudios-drwhoitaly-samsungit/playlist.m3u8"]
+    "doctor-who": ["https://amg00793-amg00793c17-samsung-it-4577.playouts.now.amagi.tv/playlist/amg00793-bbcstudios-drwhoitaly-samsungit/playlist.m3u8"],
+    "supertennis": ["https://live-embed.supertennix.hiway.media/restreamer/supertennix_client/gpu-a-c0-16/restreamer/outgest/h24_supertennix/manifest.m3u8"]
 }
 skystreaming ={
-    "sky-sport-tennis": f"https://skystreaming.{SKY_DOMAIN}/embed/MKCKP",
-    "sky-sport-24": f"https://skystreaming.{SKY_DOMAIN}/embed/GB7zq",
-    "sky-sport-251": f"https://skystreaming.{SKY_DOMAIN}/embed/drHbM",
-    "sky-sport-252": f"https://skystreaming.{SKY_DOMAIN}/embed/m5kfg",
-    "sky-sport-253": f"https://skystreaming.{SKY_DOMAIN}/embed/YprHf",
-    "sky-sport-254": f"https://skystreaming.{SKY_DOMAIN}/embed/wroRV",
-    "sky-sport-255": f"https://skystreaming.{SKY_DOMAIN}/embed/0TixN",
-    "sky-sport-256": f"https://skystreaming.{SKY_DOMAIN}/embed/8g8bh",
-    "sky-sport-257": f"https://skystreaming.{SKY_DOMAIN}/embed/ri859",
-    "sky-sport-258": f"https://skystreaming.{SKY_DOMAIN}/embed/UoJuW",
-    "sky-sport-259": f"https://skystreaming.{SKY_DOMAIN}/embed/squCy",
-    "sky-sport-260": f"https://skystreaming.{SKY_DOMAIN}/embed/Z5h2e",
-    "sky-sport-261": f"https://skystreaming.{SKY_DOMAIN}/embed/Hz9FW",
-    "sky-sport-uno": f"https://skystreaming.{SKY_DOMAIN}/embed/tb1np",
-    "sky-sport-f1": f"https://skystreaming.{SKY_DOMAIN}/embed/MLkym",
-    "sky-sport-motogp": f"https://skystreaming.{SKY_DOMAIN}/embed/ARFFv",
-    "sky-sport-calcio": f"https://skystreaming.{SKY_DOMAIN}/embed/STOZT",
-    "sky-sport-arena": f"https://skystreaming.{SKY_DOMAIN}/embed/NkEda",
-    "sky-sport-max": f"https://skystreaming.{SKY_DOMAIN}/embed/4QzWz",
-    "sky-sport-nba": f"https://skystreaming.{SKY_DOMAIN}/embed/saR8j",
-    "sky-sport-golf": f"https://skystreaming.{SKY_DOMAIN}/embed/s9L5f",
-    "eurosport-1": f"https://skystreaming.{SKY_DOMAIN}/embed/Vyv99",
-    "eurosport-2": f"https://skystreaming.{SKY_DOMAIN}/embed/um8E5",
-    "dazn-zona-a": ["https://live.servis.hair/hls/serie/index.m3u8","https://live.servis.hair/hls/serie/index.m3u8"],
-    "sportitalia": "https://live.servis.hair/hls/sportitalia/index.m3u8",
+    "sky-sport-tennis": f"{SKY_DOMAIN}/embed/MKCKP",
+    "sky-sport-24": f"{SKY_DOMAIN}/embed/GB7zq",
+    "sky-sport-251": f"{SKY_DOMAIN}/embed/drHbM",
+    "sky-sport-252": f"{SKY_DOMAIN}/embed/m5kfg",
+    "sky-sport-253": f"{SKY_DOMAIN}/embed/YprHf",
+    "sky-sport-254": f"{SKY_DOMAIN}/embed/wroRV",
+    "sky-sport-255": f"{SKY_DOMAIN}/embed/0TixN",
+    "sky-sport-256": f"{SKY_DOMAIN}/embed/8g8bh",
+    "sky-sport-257": f"{SKY_DOMAIN}/embed/ri859",
+    "sky-sport-258": f"{SKY_DOMAIN}/embed/UoJuW",
+    "sky-sport-259": f"{SKY_DOMAIN}/embed/squCy",
+    "sky-sport-260": f"{SKY_DOMAIN}/embed/Z5h2e",
+    "sky-sport-261": f"{SKY_DOMAIN}/embed/Hz9FW",
+    "sky-sport-uno": f"{SKY_DOMAIN}/embed/tb1np",
+    "sky-sport-f1": f"{SKY_DOMAIN}/embed/MLkym",
+    "sky-sport-motogp": f"{SKY_DOMAIN}/embed/ARFFv",
+    "sky-sport-calcio": f"{SKY_DOMAIN}/embed/STOZT",
+    "sky-sport-arena": f"{SKY_DOMAIN}/embed/NkEda",
+    "sky-sport-max": f"{SKY_DOMAIN}/embed/4QzWz",
+    "sky-sport-nba": f"{SKY_DOMAIN}/embed/saR8j",
+    "sky-sport-golf": f"{SKY_DOMAIN}/embed/s9L5f",
+    "eurosport-1": f"{SKY_DOMAIN}/embed/Vyv99",
+    "eurosport-2": f"{SKY_DOMAIN}/embed/um8E5",
+    "dazn-zona-a": ["https://hls.kangal.sbs/hls/serie/index.m3u8","https://hls.kangal.sbs/hls/serie/index.m3u8"],
+    "sportitalia": "https://hls.kangal.sbs/hls/sportitalia/index.m3u8",
 }
 huhu = {
     "canale-5": "1101559666",
@@ -899,4 +913,5 @@ provider_map = {
         'CB': 'CB01',
         "GS": "GUARDASERIE",
         "GHD": "GUARDAHD",
+        "OST": "ONLINESERIETV",
     }

@@ -64,11 +64,11 @@ async def get_supervideo_link(link,client):
 
 async def search(clean_id,client):
     headers = random_headers.generate()
-    response = await client.get(ForwardProxy + f"https://mostraguarda.{GHD_DOMAIN}/set-movie-a/{clean_id}", allow_redirects=True, impersonate = "chrome124", headers = headers, proxies = proxies)
+    response = await client.get(ForwardProxy + f"{GHD_DOMAIN}/set-movie-a/{clean_id}", allow_redirects=True, impersonate = "chrome124", headers = headers, proxies = proxies)
     if response.status_code != 200:
             print(f"GuardaHD Failed to fetch search results: {response.status_code}")
     soup = BeautifulSoup(response.text,'lxml',parse_only=SoupStrainer('li'))
-    li_tag = soup.find('li', class_='')
+    li_tag = soup.find('li')
     href = "https:" + li_tag['data-link']
     return href
 
@@ -85,14 +85,14 @@ async def guardahd(id,client):
         final_url = await get_supervideo_link(supervideo_link,client)
         return final_url
     except Exception as e:
-        print("MammaMia: Guardaserie Failed",e)
+        print("MammaMia: GuardaHD Failed",e)
         return None
     
 async def test_script():
     from curl_cffi.requests import AsyncSession
     async with AsyncSession() as client:
         # Replace with actual id, for example 'anime_id:episode' format
-        test_id = "tt0816692"  # This is an example ID format
+        test_id = "tt9218128"  # This is an example ID format
         results = await guardahd(test_id, client)
         print(results)
 
